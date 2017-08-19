@@ -1,0 +1,53 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+	compile 'org.xerial:sqlite-jdbc:3.8.9.1'
+	
+	// JUnit and Mockito
+	testCompile "junit:junit:4.11"
+}
+
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Store Management',
+				   'Implementation-Version': version
+	}
+}
+
+project.ext {
+	groovyVersion = '2.4.4'
+	gradleVersion = '2.7'
+}
+
+repositories {
+	jcenter()
+}
+
+dependencies {  //<21>
+	//This brings in the Groovy system:
+	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: "$groovyVersion"
+
+}
+
+
+
+
+sourceSets {
+	test {
+		java {
+			srcDirs = ["src.test/store"]
+		}
+	}
+
+	main {
+		java {
+			srcDirs = ["src.main/store"]
+		}
+	}
+	
+}
+
