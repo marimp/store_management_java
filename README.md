@@ -42,6 +42,13 @@ Total: 57.00€
 Items: CARDIGAN, TSHIRT, CARDIGAN, CARDIGAN, TROUSERS, TSHIRT, TSHIRT
 Total: 82.50€
 
+## Implementation details
+* The store and the discounts are in an sqlite db store.db.
+* A DAO pattern is used to retrieve the data from the database.
+* a JUnit test battery was added.
+* gradle is used to test the JUnit.
+
+
 ## Run Tests
 
 #### With gradle:
